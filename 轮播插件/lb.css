@@ -1,0 +1,64 @@
+.lb-container {
+  width: 77%;
+  height: 580px;
+  margin: auto;
+}
+
+.lb-content {
+  width: 100%;  
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.lb-item {
+  width: 100%;  
+  height: 100%;
+  display: none;
+  position: relative;
+  transition: left .6s ease-in-out;
+  perspective: 1000px;
+}
+
+.lb-item > a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.lb-item > a > img {
+  width: 100%;
+  height: 100%;
+}
+
+.lb-item.active,
+.lb-item.next,
+.lb-item.prev {
+  display: block;
+}
+
+.lb-item.active {
+  left: 0%;
+}
+.lb-item.active.left {
+  left: -100%;
+}
+.lb-item.active.right {
+  left: 100%;
+}
+
+.lb-item.next,
+.lb-item.prev {
+  position: absolute;
+  top: 0px;
+}
+.lb-item.next {
+  left: 100%;
+}
+.lb-item.prev {
+  left: -100%;
+}
+.lb-item.next.left,
+.lb-item.prev.right {
+  left: 0%;
+}
