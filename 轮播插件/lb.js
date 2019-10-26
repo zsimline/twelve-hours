@@ -1,6 +1,6 @@
 /**
  * @desc 一个轮播插件 
- * @author 梦醒时夜续 (zsimline@163.com)
+ * @author Mxsyx (zsimline@163.com)
  * @version 1.0.0
  */
 
@@ -75,8 +75,8 @@ class Lb {
 
   // 点击标志
   clickSign(event) {
-    if (!this.status) return ;
-    this.status = false;
+  //  if (!this.status) return ;
+   // this.status = false;
     const fromIndex = this.curIndex;
     const toIndex = parseInt(event.srcElement.getAttribute('slide-to'));
     const direction = fromIndex < toIndex ? 'left' : 'right';
@@ -89,6 +89,8 @@ class Lb {
     // 鼠标移动到轮播盒上时继续轮播
     this.lbBox.addEventListener('mouseleave', this.start.bind(this));
     // 鼠标从轮播盒上移开时暂停轮播
+    this.lbBox.addEventListener('mouseover', this.pause.bind(this));
+    
     this.lbBox.addEventListener('mouseover', this.pause.bind(this));
     
     // 点击左侧控件向右滑动图片
@@ -125,14 +127,16 @@ class Lb {
     setTimeout((() => {
       this.lbItems[fromIndex].className = fromClass;
       this.lbItems[toIndex].className = toClass;
-    }).bind(this), 0);
-  
+    }).bind(this), 100);
+    
     setTimeout((() => {
       this.lbItems[fromIndex].className = 'lb-item';
       this.lbItems[toIndex].className = 'lb-item active';
     }).bind(this), this.speed);
-    
-    // 设置为可滑动
+
+
+
+    //设置为可滑动
     setTimeout((() => {
       this.status = true;
     }).bind(this), this.speed + 50);

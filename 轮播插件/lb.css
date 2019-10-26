@@ -1,9 +1,15 @@
 .lb-box {
-  width: 77%;
+  width: 78%;
   height: 580px;
   margin: auto;
   position: relative;
   overflow: hidden;
+}
+@media (max-width:568px) {
+  .lb-box {
+    width: 86%;
+    height: 220px;
+  }
 }
 
 .lb-content {
@@ -29,13 +35,24 @@
   height: 100%;
 }
 
-.lb-item.active,
-.lb-item.next,
-.lb-item.prev {
+.lb-item > a > span {
+  width: 100%;
   display: block;
+  position: absolute;
+  bottom: 0px;
+  padding: 15px;
+  color: #fff;
+  background-color: rgba(0,0,0,0.7);
+}
+@media (max-width:568px) {
+  .lb-item > a > span {
+    padding: 10px;
+  }
 }
 
+/*  */
 .lb-item.active {
+  display: block;
   left: 0%;
 }
 .lb-item.active.left {
@@ -45,8 +62,10 @@
   left: 100%;
 }
 
+/*  */
 .lb-item.next,
 .lb-item.prev {
+  display: block;
   position: absolute;
   top: 0px;
 }
@@ -64,13 +83,13 @@
 .lb-sign {
   position: absolute;
   right: 10px;
-  bottom: 0px;
+  top: 0px;
   padding: 5px 3px;
   z-index: 22;
   border-radius: 6px;
   list-style: none;
   user-select: none;
-  background-color: rgb(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.7);
 }
 
 .lb-sign li {
@@ -91,7 +110,7 @@
 }
 .lb-sign li.active {
   color: #000;
-  background-color: rgb(235,235,235);
+  background-color: #EBEBEB;
 }
 
 .lb-ctrl {
@@ -107,6 +126,11 @@
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.1s linear;
+}
+@media (max-width:568px) {
+  .lb-ctrl {
+    font-size: 30px;
+  }
 }
 .lb-ctrl.left {
   left: -50px
