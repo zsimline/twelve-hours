@@ -29,9 +29,9 @@ class Lb {
     this.direction = options.direction || 'left';
 
     // 是否监听键盘事件
-    this.keyEvent = options.keyEvent || false;
+    this.moniterKeyEvent = options.moniterKeyEvent || false;
     // 是否监听屏幕滑动事件
-    this.touchEvent = options.touchEvent || false;
+    this.moniterTouchEvent = options.moniterTouchEvent || false;
 
     this.handleEvents();
     this.setTransition();
@@ -148,12 +148,12 @@ class Lb {
     }
 
     // 监听键盘事件
-    if (this.keyEvent) {
+    if (this.moniterKeyEvent) {
       document.addEventListener('keydown', this.keyDown.bind(this));
     }
 
     // 监听屏幕滑动事件
-    if (this.touchEvent) {
+    if (this.moniterTouchEvent) {
       this.lbBox.addEventListener('touchstart', this.touchScreen.bind(this));
       this.lbBox.addEventListener('touchend', this.touchScreen.bind(this));
     }
@@ -198,8 +198,8 @@ window.onload = function () {
     speed: 600,
     delay: 3000,
     direction: 'left',
-    keyEvent: true, 
-    touchEvent: true
+    moniterKeyEvent: true, 
+    moniterTouchEvent: true
   }
 
   const lb = new Lb(options);
