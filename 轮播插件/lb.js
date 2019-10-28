@@ -190,18 +190,3 @@ class Lb {
     }).bind(this), this.speed + 50);
   }
 }
-
-window.onload = function () {
-  // 轮播选项
-  const options = {
-    id: 'lb-1',
-    speed: 600,
-    delay: 3000,
-    direction: 'left',
-    moniterKeyEvent: true, 
-    moniterTouchEvent: true
-  }
-
-  const lb = new Lb(options);
-  lb.start();
-}

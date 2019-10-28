@@ -8,42 +8,59 @@
   <title>轮播插件</title>
   <link rel="stylesheet" href="lb.css">
   <script src="lb.js"></script>
+  <script>
+    window.onload = function () {
+      // 轮播选项
+      const options = {
+        id: 'lb-1',              // 轮播盒ID
+        speed: 600,              // 轮播速度(ms)
+        delay: 3000,             // 轮播延迟(ms)
+        direction: 'left',       // 图片滑动方向
+        moniterKeyEvent: true,   // 是否监听键盘事件
+        moniterTouchEvent: true  // 是否监听屏幕滑动事件
+      }
+      const lb = new Lb(options);
+      lb.start();
+    }
+  </script>
 </head>
 
 <body>
   <div class="lb-box" id="lb-1">
+    <!-- 轮播内容 -->
     <div class="lb-content">
       <div class="lb-item active">
         <a href="#">
-          <img src="./images/pic1.jpg" alt="picture loss">
+          <img src="images/pic1.jpg" alt="picture loss">
           <span>这里是描述文字</span>
         </a>
       </div>
       <div class="lb-item">
         <a href="#">
-          <img src="./images/pic2.jpg" alt="picture loss">
+          <img src="images/pic2.jpg" alt="picture loss">
           <span>这里是描述文字</span>
         </a>
       </div>
       <div class="lb-item">
         <a href="#">
-          <img src="./images/pic3.jpg" alt="picture loss">
+          <img src="images/pic3.jpg" alt="picture loss">
           <span>这里是描述文字</span>
         </a>
       </div>
       <div class="lb-item">
         <a href="#">
-          <img src="./images/pic4.jpg" alt="picture loss">
+          <img src="images/pic4.jpg" alt="picture loss">
           <span>这里是描述文字</span>
         </a>
       </div>
       <div class="lb-item">
         <a href="#">
-          <img src="./images/pic5.jpg" alt="picture loss">
+          <img src="images/pic5.jpg" alt="picture loss">
           <span>这里是描述文字</span>
         </a>
       </div>
     </div>
+    <!-- 轮播标志 -->
     <ol class="lb-sign">
       <li class="active">1</li>
       <li>2</li>
@@ -51,6 +68,7 @@
       <li>4</li>
       <li>5</li>
     </ol>
+    <!-- 轮播控件 -->
     <div class="lb-ctrl left">＜</div>
     <div class="lb-ctrl right">＞</div>
   </div>
