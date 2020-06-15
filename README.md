@@ -1,3 +1,4 @@
-# myJq22
-个人制作的前端插件集合
-https://www.jq22.com/myhome
+# Twelve-hours
+## 十二个时辰真的可以做很多事
+
+### The Front-end plugin and component collection. For native HTML or Vue/React frame.
